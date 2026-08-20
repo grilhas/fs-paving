@@ -3,10 +3,11 @@
 import { Picture } from "astro:assets";
 
 // Fotografias e padroes
-// NOTA: os padroes de calcada (leque/onda/bicolor/lancil) sao ilustracoes geradas
-// nas cores do logotipo, nao fotografias de trabalhos da FS Paving. Servem para o
-// site nao ficar vazio, mas devem ser substituidos pelas fotografias reais dos
-// trabalhos, que a empresa tem publicadas no Instagram.
+// NOTA: os padroes de calcada (cubos, onda, bicolor, lancil+pave) sao ilustracoes
+// geradas nas cores do logotipo, e as fotografias com pessoas sao de banco de
+// imagens de outros oficios, escolhidas por mostrarem o mesmo gesto e as mesmas
+// ferramentas. Nenhuma e um trabalho real da FS Paving. Devem ser substituidas
+// pelas fotografias da empresa, que estao publicadas no Instagram.
 import calcadaOnda from "@assets/images/pavimentos/calcada-onda.jpg";
 import calcadaCubos from "@assets/images/pavimentos/calcada-cubos.jpg";
 import calcadaBicolor from "@assets/images/pavimentos/calcada-bicolor.jpg";
@@ -14,15 +15,16 @@ import calcadaDetalhe from "@assets/images/pavimentos/calcada-cubos-detalhe.jpg"
 import ondaPasseio from "@assets/images/pavimentos/calcada-onda-passeio.jpg";
 import lancilPave from "@assets/images/pavimentos/lancil-e-pave.jpg";
 import paveBlocos from "@assets/images/pavimentos/pave-blocos.jpg";
+import jardimEnvolvente from "@assets/images/pavimentos/jardim-envolvente.jpg";
+import maosAssentar from "@assets/images/pavimentos/maos-a-assentar-peca.jpg";
+import reguaNivelar from "@assets/images/pavimentos/regua-a-nivelar.jpg";
+import trabalhadorSeguranca from "@assets/images/pavimentos/trabalhador-equipamento-seguranca.jpg";
+import equipaExterior from "@assets/images/pavimentos/equipa-no-exterior.jpg";
 import movimentacaoTerras from "@assets/images/pavimentos/movimentacao-de-terras.jpg";
 import preparacaoBase from "@assets/images/pavimentos/preparacao-de-base.jpg";
+import cargaMaterial from "@assets/images/pavimentos/carga-de-material.jpg";
+import medicaoLocal from "@assets/images/pavimentos/medicao-no-local.jpg";
 import remocaoMaterial from "@assets/images/pavimentos/remocao-de-material.jpg";
-import orcamentoVisita from "@assets/images/pavimentos/orcamento-visita-obra.jpg";
-import equipaObra from "@assets/images/pavimentos/equipa-em-obra.jpg";
-import algarveVilas from "@assets/images/pavimentos/algarve-vilas-vista-aerea.jpg";
-import algarveFalesia from "@assets/images/pavimentos/algarve-falesia-moradias.jpg";
-import ruaAlbufeira from "@assets/images/pavimentos/rua-albufeira-moradia.jpg";
-import jardimEnvolvente from "@assets/images/pavimentos/jardim-envolvente.jpg";
 
 type GalleryCategory = {
 	key: string;
@@ -31,6 +33,17 @@ type GalleryCategory = {
 };
 
 const galleries: GalleryCategory[] = [
+	{
+		key: "equipa",
+		label: "A Equipa em Obra",
+		images: [
+			{ src: maosAssentar, alt: "Mãos a assentar peça a peça, com cola e niveladores" },
+			{ src: reguaNivelar, alt: "Profissional a nivelar a superfície com régua antes de assentar" },
+			{ src: cargaMaterial, alt: "Carga e descarga de material no local da obra" },
+			{ src: trabalhadorSeguranca, alt: "Trabalhador com equipamento de segurança em obra" },
+			{ src: medicaoLocal, alt: "Medição e registo no local, antes do orçamento" },
+		],
+	},
 	{
 		key: "calcada",
 		label: "Calçada Portuguesa",
@@ -52,23 +65,13 @@ const galleries: GalleryCategory[] = [
 		],
 	},
 	{
-		key: "obra",
-		label: "Base e Movimento de Terras",
+		key: "base",
+		label: "Base e Terreno",
 		images: [
 			{ src: movimentacaoTerras, alt: "Máquina e camião em movimentação de terras" },
 			{ src: preparacaoBase, alt: "Preparação e compactação da base antes de assentar pedra" },
+			{ src: equipaExterior, alt: "Equipa a trabalhar no exterior" },
 			{ src: remocaoMaterial, alt: "Remoção de material e entulho do local" },
-			{ src: equipaObra, alt: "Equipa da FS Paving em obra" },
-		],
-	},
-	{
-		key: "algarve",
-		label: "No Algarve",
-		images: [
-			{ src: algarveVilas, alt: "Vista aérea de moradias no Algarve" },
-			{ src: algarveFalesia, alt: "Moradias sobre a falésia no Algarve" },
-			{ src: ruaAlbufeira, alt: "Rua de moradias em Albufeira" },
-			{ src: orcamentoVisita, alt: "Visita ao local para medir a área e dar orçamento" },
 		],
 	},
 ];

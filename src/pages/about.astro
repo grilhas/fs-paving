@@ -14,12 +14,12 @@ import { BUSINESS } from "@data/client";
 
 // Images
 import bannerImage from "@assets/images/pavimentos/equipa-em-obra.jpg";
-import aboutImage1 from "@assets/images/pavimentos/calcada-cubos-detalhe.jpg";
-import aboutImage2 from "@assets/images/pavimentos/movimentacao-de-terras.jpg";
+import aboutImage1 from "@assets/images/pavimentos/maos-a-assentar-peca.jpg";
+import aboutImage2 from "@assets/images/pavimentos/trabalhador-equipamento-seguranca.jpg";
 // NOTE: fotografia de banco de imagens com licença livre — é uma imagem genérica de
 // obra, não uma fotografia real de quem é dono da empresa. Fica deliberadamente sem
 // nome associado (ver o texto abaixo) para não passar por uma pessoa real.
-import ownerImage from "@assets/images/pavimentos/orcamento-visita-obra.jpg";
+import ownerImage from "@assets/images/pavimentos/medicao-no-local.jpg";
 
 const optimizedBanner = await getImage({ src: bannerImage, format: "webp" });
 ---
@@ -44,7 +44,7 @@ const optimizedBanner = await getImage({ src: bannerImage, format: "webp" });
       <div class="cs-image-group">
         <Picture
           src={aboutImage1}
-          alt="Detalhe de calçada em cubo de calcário, com a junta cheia de areia"
+          alt="Mãos a assentar peça a peça, com cola e niveladores"
           widths={[482, 802, 1044]}
           sizes="(min-width: 64rem) 522px, (min-width: 48rem) 400px, 90vw"
           formats={["avif", "webp"]}
@@ -53,7 +53,7 @@ const optimizedBanner = await getImage({ src: bannerImage, format: "webp" });
         />
         <Picture
           src={aboutImage2}
-          alt="Movimentação de terras e preparação de base antes de assentar pedra"
+          alt="Trabalhador com equipamento de segurança em obra"
           widths={[366, 600, 780]}
           sizes="(min-width: 64rem) 414px, (min-width: 48rem) 300px, 60vw"
           formats={["avif", "webp"]}
@@ -152,7 +152,7 @@ const optimizedBanner = await getImage({ src: bannerImage, format: "webp" });
     <div class="cs-container">
       <Picture
         src={ownerImage}
-        alt="Profissional a analisar o terreno e as medidas antes de dar orçamento"
+        alt="Medição e registo no local, antes de dar orçamento"
         widths={[520, 1040]}
         sizes="(min-width: 64rem) 520px, 90vw"
         formats={["avif", "webp"]}
