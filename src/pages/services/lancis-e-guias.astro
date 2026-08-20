@@ -1,0 +1,187 @@
+---
+// LANCIS E GUIAS — /services/lancis-e-guias/
+import { getImage } from "astro:assets";
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import {
+	buildServiceSchema,
+	buildFaqSchema,
+	buildBreadcrumbSchema,
+} from "@js/serviceSchema.js";
+
+import bannerImage from "@assets/images/pavimentos/lancil-e-pave.jpg";
+import introImage from "@assets/images/pavimentos/lancil-e-pave.jpg";
+import whyImageOne from "@assets/images/pavimentos/calcada-cubos.jpg";
+import whyImageTwo from "@assets/images/pavimentos/jardim-envolvente.jpg";
+import processBefore from "@assets/images/pavimentos/preparacao-de-base.jpg";
+import processAfter from "@assets/images/pavimentos/lancil-e-pave.jpg";
+
+const optimizedBanner = await getImage({ src: bannerImage, format: "webp" });
+
+const service = {
+	meta: {
+		title: "Lancis, Guias e Cordões no Algarve | Remate de Pavimentos",
+		seoDescription:
+			"Assentamento de lancis, guias e cordões em betão ou pedra, para delimitar passeios, canteiros e acessos, em todo o Algarve. Orçamentos gratuitos.",
+	},
+	banner: {
+		title: "Lancis e Guias",
+		description:
+			"O remate que impede o pavimento de abrir pelos lados.",
+		image: optimizedBanner,
+	},
+	intro: {
+		titleHighlight: "Lancis e Guias",
+		titleSuffix: " no Algarve",
+		intro: [
+			"O lancil é a peça que quase ninguém pede e que decide a durabilidade do resto. Um pavimento em pedra ou em blocos trabalha por travamento: se os lados não estiverem contidos, a primeira fiada cede e o pavimento começa a abrir de fora para dentro.",
+			"Assentamos lancis, guias e cordões em betão ou pedra, para delimitar passeios, canteiros, acessos, zonas de estacionamento e transições entre pavimentos diferentes.",
+		],
+		emphasis:
+			"Um pavimento sem contenção lateral não se desfaz ao meio. Desfaz-se pelas bordaduras, e depois para dentro.",
+		listIntro: "O que fazemos neste serviço:",
+		listItems: [
+			{
+				label: "Lancis de passeio",
+				description:
+					"Assentamento de lancis a delimitar passeios e a definir a cota entre pavimento pedonal e rodovia.",
+			},
+			{
+				label: "Guias e cordões",
+				description:
+					"Guias e cordões mais discretos, para separar zonas de relvado, canteiro e caminho sem criar barreira visual.",
+			},
+			{
+				label: "Fundação em betão",
+				description:
+					"Lancis assentados sobre fundação em betão e travados por trás, que é o que os mantém alinhados ao longo dos anos.",
+			},
+			{
+				label: "Curvas e transições",
+				description:
+					"Traçado em curva e transições de cota, incluindo rebaixamento em entradas de garagem e passagens.",
+			},
+			{
+				label: "Remate com o pavimento",
+				description:
+					"Ajuste do remate para a última fiada de cubo ou de bloco fechar contra o lancil sem sobrar meia peça.",
+			},
+		],
+		image: introImage,
+		imageAlt: "Lancil a separar calçada de pavê, com o remate entre os dois pavimentos",
+	},
+	whyChoose: {
+		title: "Porque Escolher a FS Paving",
+		introPara:
+			"Muita da reparação que nos pedem começa numa bordadura sem contenção. A pedra soltou-se na margem, a junta esvaziou, e a partir daí o problema caminhou para o interior do pavimento.",
+		reasons: [
+			{
+				heading: "Fundação e Travamento",
+				description:
+					"Lancil sem fundação em betão e sem travamento por trás desalinha-se com o tempo. Fazemos as duas coisas.",
+			},
+			{
+				heading: "Alinhamento e Cota",
+				description:
+					"Alinhamento conferido ao longo do traçado e cota certa em relação ao pavimento e às soleiras.",
+			},
+			{
+				heading: "Curvas Sem Quebras",
+				description:
+					"Traçado em curva feito com peças cortadas à medida, em vez de forçar peças retas e deixar aberturas.",
+			},
+			{
+				heading: "Pensado com o Pavimento",
+				description:
+					"Definimos o lancil ao mesmo tempo que o pavimento, para o remate fechar limpo e não sobrar um recorte estreito.",
+			},
+		],
+		imageOne: whyImageOne,
+		imageOneAlt: "Campo de calçada em cubo com o remate contido pelas bordaduras",
+		imageTwo: whyImageTwo,
+		imageTwoAlt: "Zona exterior com pavimento e envolvente ajardinada delimitada",
+	},
+	process: {
+		title: "Lancis e Passeio num Condomínio em Vilamoura",
+		paragraph:
+			"O passeio interior do condomínio tinha a calçada a abrir junto aos canteiros, por não existir nenhuma contenção entre o pavimento e a terra.",
+		headingThree: "Como fizemos",
+		bullets: [
+			{
+				label: "Visita e orçamento gratuito",
+				description:
+					"Percorremos o traçado, medimos a extensão e identificámos as zonas onde a bordadura já tinha cedido.",
+			},
+			{
+				label: "Abertura e fundação",
+				description:
+					"Abrimos a vala do lancil e executámos a fundação em betão ao longo de todo o traçado, incluindo as curvas.",
+			},
+			{
+				label: "Assentamento dos lancis",
+				description:
+					"Lancis assentados, alinhados e travados por trás, com as peças de curva cortadas à medida.",
+			},
+			{
+				label: "Reassentamento da calçada",
+				description:
+					"Reassentámos a calçada que tinha aberto, agora contida pelo lancil, e enchemos a junta com areia vibrada.",
+			},
+		],
+		imageOne: processBefore,
+		imageOneAlt: "Vala e fundação em preparação para assentamento dos lancis",
+		imageTwo: processAfter,
+		imageTwoAlt: "Lancis assentados a rematar o pavimento e a delimitar o canteiro",
+	},
+	faq: {
+		title: "Perguntas Frequentes sobre Lancis e Guias",
+		questions: [
+			{
+				question: "Preciso mesmo de lancil?",
+				answer:
+					"Se o pavimento confina com terra, relvado ou uma zona mais baixa, sim. Sem contenção lateral, a primeira fiada solta-se e o problema avança para dentro. Quando o pavimento já encosta a um muro ou a uma parede, a contenção pode já existir.",
+			},
+			{
+				question: "Lancil de betão ou de pedra?",
+				answer:
+					"O de betão é mais económico e existe em vários perfis; o de pedra tem melhor aspeto e é o indicado quando a envolvente é em pedra natural. Explicamos a diferença de preço na visita.",
+			},
+			{
+				question: "Fazem curvas?",
+				answer:
+					"Sim. Em traçado curvo usamos peças cortadas à medida, para a curva ficar contínua e sem aberturas entre peças.",
+			},
+			{
+				question: "Dá para rebaixar o lancil numa entrada de garagem?",
+				answer:
+					"Sim, e é o habitual. Fazemos a transição de cota com peças de rebaixamento, para o carro entrar sem bater e sem forçar a bordadura.",
+			},
+			{
+				question: "Podem assentar lancis num pavimento que já existe?",
+				answer:
+					"Sim. Abrimos a vala junto à bordadura, executamos a fundação e assentamos o lancil, reassentando depois a fiada de pavimento que tiver de ser ajustada.",
+			},
+		],
+	},
+};
+
+const serviceSchema = buildServiceSchema({
+	name: "Lancis e Guias",
+	description: service.meta.seoDescription,
+	slug: "lancis-e-guias",
+	serviceType: "Assentamento de lancis, guias e cordões",
+});
+const faqSchema = buildFaqSchema(service.faq.questions);
+const breadcrumbSchema = buildBreadcrumbSchema([
+	{ name: "Início", url: "/" },
+	{ name: "Serviços", url: "/services/" },
+	{ name: "Lancis e Guias", url: "/services/lancis-e-guias/" },
+]);
+---
+
+<ServiceLayout {...service}>
+	<Fragment slot="schema">
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	</Fragment>
+</ServiceLayout>

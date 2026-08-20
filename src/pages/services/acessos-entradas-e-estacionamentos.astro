@@ -1,0 +1,187 @@
+---
+// ACESSOS, ENTRADAS E ESTACIONAMENTOS — /services/acessos-entradas-e-estacionamentos/
+import { getImage } from "astro:assets";
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import {
+	buildServiceSchema,
+	buildFaqSchema,
+	buildBreadcrumbSchema,
+} from "@js/serviceSchema.js";
+
+import bannerImage from "@assets/images/pavimentos/calcada-cubos.jpg";
+import introImage from "@assets/images/pavimentos/movimentacao-de-terras.jpg";
+import whyImageOne from "@assets/images/pavimentos/pave-blocos.jpg";
+import whyImageTwo from "@assets/images/pavimentos/rua-albufeira-moradia.jpg";
+import processBefore from "@assets/images/pavimentos/movimentacao-de-terras.jpg";
+import processAfter from "@assets/images/pavimentos/calcada-cubos.jpg";
+
+const optimizedBanner = await getImage({ src: bannerImage, format: "webp" });
+
+const service = {
+	meta: {
+		title: "Acessos, Entradas de Garagem e Estacionamentos no Algarve",
+		seoDescription:
+			"Pavimentação de entradas de garagem, caminhos de acesso e zonas de estacionamento em calçada ou pavê, em todo o Algarve, com escoamento calculado. Orçamentos gratuitos.",
+	},
+	banner: {
+		title: "Acessos, Entradas e Estacionamentos",
+		description:
+			"Entradas e estacionamentos, com o escoamento pensado desde o início.",
+		image: optimizedBanner,
+	},
+	intro: {
+		titleHighlight: "Acessos, Entradas e Estacionamentos",
+		titleSuffix: " no Algarve",
+		intro: [
+			"A entrada é a zona do pavimento que sofre mais: recebe o peso do carro sempre no mesmo sítio, tem a maior mudança de cota do terreno e é por onde a água corre quando chove a sério.",
+			"Fazemos entradas de garagem, caminhos de acesso e zonas de estacionamento em calçada portuguesa ou pavê, com a base dimensionada à carga e as pendentes calculadas para a água nunca ir na direção da casa.",
+		],
+		emphasis:
+			"Uma entrada bem feita nota-se no dia em que chove muito e a água vai para a rua em vez de ir para a garagem.",
+		listIntro: "O que inclui um trabalho de acesso connosco:",
+		listItems: [
+			{
+				label: "Levantamento de cotas",
+				description:
+					"Medimos as cotas entre a rua, o portão e a soleira da garagem, porque é isso que define para onde a água pode ir.",
+			},
+			{
+				label: "Movimentação de terras",
+				description:
+					"Escavação, regularização e retirada do material excedente, quando o acesso é em terreno natural.",
+			},
+			{
+				label: "Base à medida da carga",
+				description:
+					"Base em tout-venant compactada por camadas, com espessura dimensionada ao peso das viaturas previstas.",
+			},
+			{
+				label: "Escoamento e drenagem",
+				description:
+					"Pendentes definidas e, quando é necessário, grelha ou linha de drenagem à entrada da garagem.",
+			},
+			{
+				label: "Pavimento e contenção",
+				description:
+					"Calçada ou pavê assentados, com lancil a conter os lados e a rematar contra o portão e o relvado.",
+			},
+		],
+		image: introImage,
+		imageAlt: "Máquina em movimentação de terras na preparação de um acesso",
+	},
+	whyChoose: {
+		title: "Porque Escolher a FS Paving",
+		introPara:
+			"As duas coisas que estragam uma entrada são a carga concentrada e a água. A carga resolve-se na base e no travamento do pavimento. A água resolve-se nas cotas, e essas decidem-se antes de assentar a primeira pedra.",
+		reasons: [
+			{
+				heading: "Cotas Antes da Pedra",
+				description:
+					"Levantamos as cotas e definimos o escoamento no início. Corrigir isso depois de o pavimento estar feito é refazer o trabalho.",
+			},
+			{
+				heading: "Base Dimensionada",
+				description:
+					"A espessura da base acompanha a carga prevista, e não uma receita única aplicada a tudo.",
+			},
+			{
+				heading: "Travamento na Zona de Rodado",
+				description:
+					"Na faixa por onde o carro passa sempre, o travamento e a calibração da pedra são escolhidos para essa carga.",
+			},
+			{
+				heading: "Remate no Portão e na Soleira",
+				description:
+					"Ajustamos a cota ao portão e à soleira da garagem, para o carro entrar sem bater e sem forçar o pavimento.",
+			},
+		],
+		imageOne: whyImageOne,
+		imageOneAlt: "Pavê em fiada travada numa zona de passagem de viaturas",
+		imageTwo: whyImageTwo,
+		imageTwoAlt: "Rua de moradias no Algarve com acessos pavimentados",
+	},
+	process: {
+		title: "Entrada de Garagem e Estacionamento em Portimão",
+		paragraph:
+			"O pavimento em cimento à entrada estava fissurado e com uma zona afundada onde o carro passa. Com chuva forte, parte da água escorria para dentro da garagem.",
+		headingThree: "Como fizemos",
+		bullets: [
+			{
+				label: "Levantamento e orçamento gratuito",
+				description:
+					"Medimos as cotas entre a rua e a soleira, identificámos o ponto onde a água entrava e entregámos orçamento por escrito.",
+			},
+			{
+				label: "Remoção e escavação",
+				description:
+					"Retirámos o pavimento fissurado, escavámos à cota necessária e removemos o material do local.",
+			},
+			{
+				label: "Base e drenagem",
+				description:
+					"Base compactada por camadas, pendente invertida junto à soleira e grelha de drenagem à entrada da garagem.",
+			},
+			{
+				label: "Pavê e remate",
+				description:
+					"Pavê assentado em fiada travada na zona de rodado, com lancil a conter os lados e o remate ajustado ao portão.",
+			},
+		],
+		imageOne: processBefore,
+		imageOneAlt: "Zona de acesso a ser escavada e preparada antes do pavimento",
+		imageTwo: processAfter,
+		imageTwoAlt: "Acesso pavimentado, com a base e o escoamento resolvidos",
+	},
+	faq: {
+		title: "Perguntas Frequentes sobre Acessos, Entradas e Estacionamentos",
+		questions: [
+			{
+				question: "Quanto tempo fica a garagem sem acesso?",
+				answer:
+					"Depende da área, mas combinamos isso à partida. Quando é indispensável manter o acesso, trabalhamos por fases, fazendo primeiro metade da largura.",
+			},
+			{
+				question: "Consegue-se resolver a água que entra na garagem?",
+				answer:
+					"Quase sempre. Faz-se com pendente invertida junto à soleira e, se for preciso, com uma grelha de drenagem transversal à entrada. É melhor resolver isso ao pavimentar do que depois.",
+			},
+			{
+				question: "Calçada ou pavê na entrada?",
+				answer:
+					"Para passagem diária de viaturas, normalmente pavê, pelo travamento sob carga. Se a prioridade for o aspeto e a coerência com a frente da casa, faz-se em calçada com a base reforçada na zona de rodado.",
+			},
+			{
+				question: "Fazem também a movimentação de terras?",
+				answer:
+					"Sim. Quando o acesso é em terreno natural, o trabalho começa aí: escavação, regularização e retirada do material excedente.",
+			},
+			{
+				question: "Dá para fazer um acesso comprido em terreno inclinado?",
+				answer:
+					"Dá, e é frequente no interior do Algarve. Nessas situações o cuidado principal é o escoamento ao longo do declive, para a água não abrir caminho por baixo do pavimento.",
+			},
+		],
+	},
+};
+
+const serviceSchema = buildServiceSchema({
+	name: "Acessos, Entradas e Estacionamentos",
+	description: service.meta.seoDescription,
+	slug: "acessos-entradas-e-estacionamentos",
+	serviceType: "Pavimentação de acessos, entradas e estacionamentos",
+});
+const faqSchema = buildFaqSchema(service.faq.questions);
+const breadcrumbSchema = buildBreadcrumbSchema([
+	{ name: "Início", url: "/" },
+	{ name: "Serviços", url: "/services/" },
+	{ name: "Acessos, Entradas e Estacionamentos", url: "/services/acessos-entradas-e-estacionamentos/" },
+]);
+---
+
+<ServiceLayout {...service}>
+	<Fragment slot="schema">
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	</Fragment>
+</ServiceLayout>

@@ -1,0 +1,260 @@
+[
+  {
+    "slug": "albufeira",
+    "name": "Albufeira",
+    "state": "Faro",
+    "banner": "rua-albufeira-moradia",
+    "lead": "Calçada portuguesa, pavê e lancis em Albufeira: entradas de moradia, envolventes de piscina, condomínios e espaços comerciais.",
+    "body": [
+      "Albufeira é uma das zonas onde trabalhamos com mais frequência. Entre moradias com piscina, apartamentos em condomínio e estabelecimentos na zona comercial, quase todos os pavimentos exteriores pedem soluções diferentes: uns levam carro todos os dias, outros são só passagem a pé, e outros estão molhados metade do ano.",
+      "Assentamos calçada portuguesa em cubo, pavê em blocos e lancis, sempre com a base compactada antes de assentar a pedra. É a base que decide se o pavimento afunda ao terceiro inverno ou se fica firme durante décadas.",
+      "Em Albufeira aparecem-nos muitos trabalhos de reparação em pavimentos assentes há anos sobre base insuficiente, com zonas afundadas junto às entradas de garagem. Na maioria dos casos conseguimos reaproveitar os cubos existentes e corrigir só a base.",
+      "Se precisa de pavimentar ou reparar um acesso em Albufeira, vamos ver o local e entregamos orçamento gratuito, sem compromisso."
+    ],
+    "commonJobs": [
+      "Entradas de garagem em pavê travado",
+      "Calçada portuguesa em caminhos e passeios de moradia",
+      "Envolventes de piscina com pedra antiderrapante",
+      "Lancis e guias a delimitar canteiros e acessos",
+      "Reparação de zonas afundadas junto a entradas",
+      "Pavimentos exteriores em condomínios e espaços comerciais"
+    ],
+    "scenarios": [
+      {
+        "title": "Entrada de garagem afundada numa moradia em Albufeira",
+        "description": "O pavimento tinha cedido onde o carro passa todos os dias. Levantámos a área afetada, refizemos a base com tout-venant compactado e reassentámos os cubos que estavam em bom estado."
+      },
+      {
+        "title": "Envolvente de piscina numa villa com aluguer turístico",
+        "description": "O cliente queria pedra que não queimasse os pés no verão. Assentámos calcário claro com acabamento rugoso na zona de contorno e deixámos o remate junto à borda com junta cheia."
+      },
+      {
+        "title": "Passeio e lancis num condomínio",
+        "description": "Assentámos lancis novos a delimitar o passeio interior e refizemos a calçada em cubo, com as pendentes corrigidas para a água não acumular junto às entradas."
+      }
+    ],
+    "neighborhoods": [
+      "Centro de Albufeira",
+      "Olhos de Água",
+      "Santa Eulália",
+      "Guia",
+      "Ferreiras",
+      "Paderne"
+    ]
+  },
+  {
+    "slug": "vilamoura",
+    "name": "Vilamoura",
+    "state": "Faro",
+    "banner": "algarve-vilas-vista-aerea",
+    "lead": "Pavimentações em Vilamoura e arredores: moradias de luxo, envolventes de piscina, acessos e zonas de lazer.",
+    "body": [
+      "Em Vilamoura e nas zonas vizinhas de Quarteira, Almancil, Vale do Lobo e Quinta do Lago, a maior parte do que fazemos é em moradias com exigência de acabamento: envolventes de piscina, caminhos de jardim, entradas e terraços.",
+      "Trabalhamos com calçada portuguesa em cubo, pavê em blocos e lancis, e ajustamos o padrão e o tipo de pedra ao que a casa já tem, em vez de aplicar sempre a mesma solução.",
+      "Muitos destes imóveis são arrendados durante boa parte do ano, o que significa janelas curtas de obra. Combinamos o calendário à partida e trabalhamos por fases quando é preciso manter o acesso à casa.",
+      "Atendemos em português, espanhol e alemão, o que ajuda quando o proprietário não vive em Portugal. Orçamentos gratuitos."
+    ],
+    "commonJobs": [
+      "Envolventes de piscina e terraços em pedra clara",
+      "Caminhos de jardim em calçada portuguesa",
+      "Entradas e acessos em pavê travado",
+      "Padrões desenhados em calçada bicolor",
+      "Lancis a delimitar zonas de relvado e canteiro",
+      "Reparação pontual antes da época de arrendamento"
+    ],
+    "scenarios": [
+      {
+        "title": "Terraço e caminho de acesso numa moradia em Vilamoura",
+        "description": "Assentámos calçada em cubo de calcário no caminho de acesso e rematámos o terraço com lancil, mantendo o desenho alinhado com a fachada da casa."
+      },
+      {
+        "title": "Envolvente de piscina numa villa arrendada",
+        "description": "A obra tinha de ficar pronta entre duas reservas. Trabalhámos por fases para o acesso à casa nunca ficar cortado e entregámos dentro da janela combinada."
+      },
+      {
+        "title": "Padrão desenhado à entrada de uma moradia",
+        "description": "O cliente queria um motivo em calçada bicolor à entrada. Desenhámos o padrão à escala do espaço e assentámos cubo claro e basalto à mão."
+      }
+    ],
+    "neighborhoods": [
+      "Marina de Vilamoura",
+      "Quarteira",
+      "Almancil",
+      "Vale do Lobo",
+      "Quinta do Lago",
+      "Vilasol"
+    ]
+  },
+  {
+    "slug": "loule",
+    "name": "Loulé",
+    "state": "Faro",
+    "banner": "calcada-cubos",
+    "lead": "Calçada portuguesa, pavê e lancis no concelho de Loulé, do centro da cidade às moradias da serra e do litoral.",
+    "body": [
+      "O concelho de Loulé é grande e muito variado: o centro da cidade com calçada tradicional, o litoral de Quarteira e Almancil com moradias e condomínios, e o interior de Boliqueime, Salir e Alte com casas mais isoladas e acessos compridos.",
+      "Assentamos calçada portuguesa em cubo, pavê em blocos e lancis, e adaptamos a solução ao uso: um caminho de passagem a pé não leva a mesma base que um acesso por onde passa um trator ou uma viatura pesada.",
+      "Nas casas do interior, os acessos compridos em terra são um pedido frequente. Nesses casos, o trabalho começa na movimentação de terras e na compactação, antes de haver pedra nenhuma.",
+      "Peça orçamento gratuito: vemos o local, medimos a área e explicamos o que a base exige antes de falarmos de padrão."
+    ],
+    "commonJobs": [
+      "Calçada tradicional em cubo no centro urbano",
+      "Acessos compridos em pavê para casas isoladas",
+      "Preparação e compactação de base em terreno natural",
+      "Lancis e guias em passeios e canteiros",
+      "Entradas de garagem e zonas de estacionamento",
+      "Reparação de calçada com raízes a levantar a pedra"
+    ],
+    "scenarios": [
+      {
+        "title": "Acesso comprido a uma casa em Boliqueime",
+        "description": "O caminho era em terra e ficava intransitável com chuva. Fizemos movimentação de terras, base compactada e pavê travado, com pendente para a água correr para a vala lateral."
+      },
+      {
+        "title": "Calçada levantada por raízes em Loulé",
+        "description": "Uma árvore tinha levantado a calçada num passeio de moradia. Levantámos a zona afetada, resolvemos o conflito com a raiz e reassentámos os cubos existentes."
+      },
+      {
+        "title": "Entrada de garagem em Almancil",
+        "description": "Assentámos pavê em fiada travada na entrada e lancil a delimitar o relvado, com a cota ajustada à soleira do portão."
+      }
+    ],
+    "neighborhoods": [
+      "Centro de Loulé",
+      "Almancil",
+      "Quarteira",
+      "Boliqueime",
+      "Salir",
+      "Alte"
+    ]
+  },
+  {
+    "slug": "faro",
+    "name": "Faro",
+    "state": "Faro",
+    "banner": "calcada-onda",
+    "lead": "Pavimentações em Faro: calçada portuguesa em zona urbana, pavê em acessos e lancis em passeios e canteiros.",
+    "body": [
+      "Em Faro trabalhamos tanto em moradias como em espaços comerciais e zonas urbanas. Na cidade, a calçada portuguesa é o pavimento com que se convive todos os dias, e é também o que mais se degrada quando a base foi mal feita ou quando há passagem de viaturas onde só era previsto passar gente.",
+      "Assentamos calçada em cubo, pavê em blocos e lancis, e fazemos reparação e reassentamento em pavimentos existentes, incluindo zonas que abateram junto a tampas e caixas de saneamento.",
+      "Nas zonas de Montenegro, Gambelas e Estoi aparecem-nos sobretudo entradas de moradia e envolventes de piscina; no centro, mais reparação e reassentamento.",
+      "Se tem um pavimento a precisar de intervenção em Faro, marcamos visita e damos orçamento gratuito."
+    ],
+    "commonJobs": [
+      "Calçada portuguesa em cubo, corrida ou com padrão",
+      "Reassentamento de zonas abatidas junto a caixas e tampas",
+      "Pavê em entradas de garagem e acessos",
+      "Lancis e guias em passeios e canteiros",
+      "Envolventes de piscina em moradias",
+      "Pavimentos exteriores em espaços comerciais"
+    ],
+    "scenarios": [
+      {
+        "title": "Zona abatida junto a uma caixa de saneamento",
+        "description": "O pavimento tinha assentado em volta da tampa. Levantámos a área, recompactámos a base à volta da caixa e reassentámos os cubos ao nível certo."
+      },
+      {
+        "title": "Entrada de moradia em Montenegro",
+        "description": "Substituímos um pavimento em cimento fissurado por pavê travado, com lancil a delimitar o canteiro e pendente para a rua."
+      },
+      {
+        "title": "Passeio em calçada num espaço comercial",
+        "description": "Assentámos calçada em cubo na frente do estabelecimento, com o trabalho feito fora do horário de funcionamento para não fechar a porta ao público."
+      }
+    ],
+    "neighborhoods": [
+      "Centro Histórico",
+      "Montenegro",
+      "Gambelas",
+      "Estoi",
+      "Santa Bárbara de Nexe",
+      "Conceição de Faro"
+    ]
+  },
+  {
+    "slug": "lagos",
+    "name": "Lagos",
+    "state": "Faro",
+    "banner": "algarve-falesia-moradias",
+    "lead": "Calçada portuguesa, pavê e lancis em Lagos e arredores, em moradias, condomínios e zonas de lazer.",
+    "body": [
+      "Lagos fica no barlavento e é uma das zonas onde nos deslocamos com regularidade. O trabalho aqui é sobretudo em moradias e condomínios: entradas, caminhos de acesso, envolventes de piscina e terraços.",
+      "Assentamos calçada portuguesa em cubo, pavê em blocos e lancis. Perto do mar, a escolha da pedra e o cuidado com a junta contam mais: a areia da junta é a primeira coisa a sair com vento e com lavagens frequentes, e uma junta vazia é o início de um cubo solto.",
+      "Também fazemos reparação e reassentamento em pavimentos existentes, que é o pedido mais comum em casas com alguns anos e uso intenso no verão.",
+      "Orçamentos gratuitos e atendimento em português, espanhol e alemão."
+    ],
+    "commonJobs": [
+      "Entradas e caminhos de acesso em calçada ou pavê",
+      "Envolventes de piscina e terraços",
+      "Lancis a delimitar acessos e canteiros",
+      "Reposição de junta e reassentamento de cubos soltos",
+      "Zonas de estacionamento em condomínios",
+      "Padrões desenhados em calçada bicolor"
+    ],
+    "scenarios": [
+      {
+        "title": "Cubos soltos num caminho de moradia perto do mar",
+        "description": "A junta tinha esvaziado ao longo dos anos e os cubos começavam a mexer. Reassentámos a zona afetada e refizemos a junta em toda a extensão do caminho."
+      },
+      {
+        "title": "Terraço e escada exterior em Praia da Luz",
+        "description": "Assentámos calçada em cubo no terraço e rematámos os degraus com lancil, mantendo a superfície pisável descalço."
+      },
+      {
+        "title": "Estacionamento de um condomínio em Lagos",
+        "description": "Aplicámos pavê travado nas zonas de estacionamento e calçada nas zonas pedonais, com lancis a separar claramente as duas."
+      }
+    ],
+    "neighborhoods": [
+      "Centro de Lagos",
+      "Meia Praia",
+      "Praia da Luz",
+      "Odiáxere",
+      "Barão de São João",
+      "Chinicato"
+    ]
+  },
+  {
+    "slug": "portimao",
+    "name": "Portimão",
+    "state": "Faro",
+    "banner": "calcada-bicolor",
+    "lead": "Pavimentações em Portimão, Praia da Rocha e Alvor: calçada portuguesa, pavê, lancis e reparação de pavimentos.",
+    "body": [
+      "Em Portimão trabalhamos em moradias, condomínios e espaços comerciais, do centro da cidade à Praia da Rocha e a Alvor. Grande parte dos pedidos são acessos e envolventes de piscina em casas com uso turístico.",
+      "Assentamos calçada portuguesa em cubo, pavê em blocos e lancis, com a base sempre compactada antes de assentar pedra. Em zonas de passagem de viaturas usamos pavê travado, que aguenta melhor o peso e é mais simples de reparar ponto por ponto.",
+      "Fazemos também reparação e reassentamento em pavimentos existentes: zonas afundadas, cubos soltos e junta esvaziada resolvem-se sem levantar o pavimento inteiro na maioria dos casos.",
+      "Vamos ver o local e entregamos orçamento gratuito, por escrito, antes de começar."
+    ],
+    "commonJobs": [
+      "Acessos e entradas de garagem em pavê",
+      "Calçada portuguesa em caminhos e passeios",
+      "Envolventes de piscina em casas de uso turístico",
+      "Lancis e guias em canteiros e passeios",
+      "Reparação de zonas afundadas e cubos soltos",
+      "Pavimentos exteriores em espaços comerciais"
+    ],
+    "scenarios": [
+      {
+        "title": "Acesso de moradia na Praia da Rocha",
+        "description": "Substituímos um pavimento fissurado por pavê travado, com base recompactada e pendente calculada para a água não escorrer para a garagem."
+      },
+      {
+        "title": "Calçada com junta esvaziada em Alvor",
+        "description": "Recolocámos os cubos que estavam a mexer e refizemos a junta com areia, o que travou o pavimento sem precisar de o levantar todo."
+      },
+      {
+        "title": "Passeio e lancis num edifício em Portimão",
+        "description": "Assentámos lancis novos e refizemos o passeio em calçada, corrigindo as cotas junto às entradas do edifício."
+      }
+    ],
+    "neighborhoods": [
+      "Centro de Portimão",
+      "Praia da Rocha",
+      "Alvor",
+      "Mexilhoeira Grande",
+      "Figueira",
+      "Montes de Alvor"
+    ]
+  }
+]

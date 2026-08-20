@@ -1,0 +1,388 @@
+---
+// Utils
+import { Picture } from "astro:assets";
+
+// Fotografias e padroes
+// NOTA: os padroes de calcada (leque/onda/bicolor/lancil) sao ilustracoes geradas
+// nas cores do logotipo, nao fotografias de trabalhos da FS Paving. Servem para o
+// site nao ficar vazio, mas devem ser substituidos pelas fotografias reais dos
+// trabalhos, que a empresa tem publicadas no Instagram.
+import calcadaOnda from "@assets/images/pavimentos/calcada-onda.jpg";
+import calcadaCubos from "@assets/images/pavimentos/calcada-cubos.jpg";
+import calcadaBicolor from "@assets/images/pavimentos/calcada-bicolor.jpg";
+import calcadaDetalhe from "@assets/images/pavimentos/calcada-cubos-detalhe.jpg";
+import ondaPasseio from "@assets/images/pavimentos/calcada-onda-passeio.jpg";
+import lancilPave from "@assets/images/pavimentos/lancil-e-pave.jpg";
+import paveBlocos from "@assets/images/pavimentos/pave-blocos.jpg";
+import movimentacaoTerras from "@assets/images/pavimentos/movimentacao-de-terras.jpg";
+import preparacaoBase from "@assets/images/pavimentos/preparacao-de-base.jpg";
+import remocaoMaterial from "@assets/images/pavimentos/remocao-de-material.jpg";
+import orcamentoVisita from "@assets/images/pavimentos/orcamento-visita-obra.jpg";
+import equipaObra from "@assets/images/pavimentos/equipa-em-obra.jpg";
+import algarveVilas from "@assets/images/pavimentos/algarve-vilas-vista-aerea.jpg";
+import algarveFalesia from "@assets/images/pavimentos/algarve-falesia-moradias.jpg";
+import ruaAlbufeira from "@assets/images/pavimentos/rua-albufeira-moradia.jpg";
+import jardimEnvolvente from "@assets/images/pavimentos/jardim-envolvente.jpg";
+
+type GalleryCategory = {
+	key: string;
+	label: string;
+	images: { src: ImageMetadata; alt: string }[];
+};
+
+const galleries: GalleryCategory[] = [
+	{
+		key: "calcada",
+		label: "Calçada Portuguesa",
+		images: [
+			{ src: calcadaOnda, alt: "Calçada portuguesa em padrão de onda, cubo claro sobre basalto" },
+			{ src: calcadaCubos, alt: "Campo de calçada em cubo de calcário com junta de areia" },
+			{ src: calcadaBicolor, alt: "Calçada bicolor com motivo geométrico em basalto" },
+			{ src: calcadaDetalhe, alt: "Detalhe do assentamento de cubo e da junta cheia" },
+		],
+	},
+	{
+		key: "pave-lancis",
+		label: "Pavê e Lancis",
+		images: [
+			{ src: lancilPave, alt: "Calçada, lancil e pavê lado a lado, com o remate entre pavimentos" },
+			{ src: paveBlocos, alt: "Pavê em blocos assentados em fiada travada" },
+			{ src: ondaPasseio, alt: "Passeio em calçada com faixas em onda" },
+			{ src: jardimEnvolvente, alt: "Zona exterior com pavimento e envolvente ajardinada" },
+		],
+	},
+	{
+		key: "obra",
+		label: "Base e Movimento de Terras",
+		images: [
+			{ src: movimentacaoTerras, alt: "Máquina e camião em movimentação de terras" },
+			{ src: preparacaoBase, alt: "Preparação e compactação da base antes de assentar pedra" },
+			{ src: remocaoMaterial, alt: "Remoção de material e entulho do local" },
+			{ src: equipaObra, alt: "Equipa da FS Paving em obra" },
+		],
+	},
+	{
+		key: "algarve",
+		label: "No Algarve",
+		images: [
+			{ src: algarveVilas, alt: "Vista aérea de moradias no Algarve" },
+			{ src: algarveFalesia, alt: "Moradias sobre a falésia no Algarve" },
+			{ src: ruaAlbufeira, alt: "Rua de moradias em Albufeira" },
+			{ src: orcamentoVisita, alt: "Visita ao local para medir a área e dar orçamento" },
+		],
+	},
+];
+---
+
+<!-- ============================================ --><!--                   Gallery                    --><!-- ============================================ -->
+<section id="gallery-453">
+	<div class="cs-container">
+		<div class="cs-content">
+			<div class="cs-flex">
+				<span class="cs-topper">Trabalhos Recentes</span>
+				<h2 class="cs-title">Pavimentos e Padrões</h2>
+			</div>
+			<div class="cs-button-group">
+				<button class="cs-button cs-active" data-filter="all">Todos</button>
+				{
+					galleries.map((g) => (
+						<button class="cs-button" data-filter={g.key}>
+							{g.label}
+						</button>
+					))
+				}
+			</div>
+		</div>
+		<div class="cs-wrapper">
+			{
+				galleries.map((g, i) => (
+					<div class:list={["cs-gallery", { "cs-hidden": i !== 0 }]} data-category={g.key}>
+						{g.images.map((img) => (
+							<Picture
+								src={img.src}
+								alt={img.alt}
+								widths={[305, 610]}
+								sizes="(min-width: 48rem) 305px, 50vw"
+								formats={["avif", "webp"]}
+								pictureAttributes={{ class: "cs-image" }}
+								loading="lazy"
+							/>
+						))}
+					</div>
+				))
+			}
+		</div>
+		<a href="/contact/" class="cs-button-solid">Pedir Orçamento Gratuito</a>
+	</div>
+</section>
+
+<script>
+	class CS_GalleryFilter {
+		private filtersSelector = ".cs-button";
+		private galleriesSelector = ".cs-gallery";
+		private activeClass = "cs-active";
+		private hiddenClass = "cs-hidden";
+
+		private $galleries: NodeListOf<HTMLElement>;
+		private $activeFilter?: HTMLElement;
+
+		constructor() {
+			this.$galleries = document.querySelectorAll(this.galleriesSelector);
+			const $filters = document.querySelectorAll<HTMLElement>(this.filtersSelector);
+
+			if (!$filters.length) return;
+
+			this.onClick($filters[0]);
+
+			for (const $filter of $filters) {
+				$filter.addEventListener("click", () => this.onClick($filter));
+			}
+		}
+
+		private onClick($filter: HTMLElement) {
+			const filter = $filter.dataset.filter;
+			if (!filter) return;
+
+			this.filter(filter);
+			this.$activeFilter?.classList.remove(this.activeClass);
+			$filter.classList.add(this.activeClass);
+			this.$activeFilter = $filter;
+		}
+
+		private filter(filter: string) {
+			const showAll = filter === "all";
+			for (const $gallery of this.$galleries) {
+				const show = showAll || $gallery.dataset.category === filter;
+				$gallery.classList.toggle(this.hiddenClass, !show);
+			}
+		}
+	}
+
+	const initGalleryFilter = () => new CS_GalleryFilter();
+	initGalleryFilter();
+	document.addEventListener("astro:after-swap", initGalleryFilter);
+</script>
+
+<style lang="less">
+	/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+	@media only screen and (min-width: 0rem) {
+		#gallery-453 {
+			text-align: center;
+			padding: var(--sectionPadding);
+
+			.cs-container {
+				width: 100%;
+				max-width: (550/16rem);
+				margin: auto;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: clamp(3rem, 6vw, 4rem);
+				position: relative;
+			}
+
+			.cs-content {
+				text-align: left;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: (32/16rem);
+			}
+
+			.cs-button-group {
+				width: 100%;
+				max-width: (600/16rem);
+				margin: 0;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				flex-wrap: wrap;
+				row-gap: (8/16rem);
+				column-gap: (24/16rem);
+			}
+
+			.cs-button {
+				font-size: (16/16rem);
+				line-height: 1.5em;
+				padding: 0 0 0 (16/16rem);
+				color: var(--bodyTextColor);
+				background-color: transparent;
+				border: none;
+				position: relative;
+				transition: color 0.3s;
+
+				&:before {
+					content: "";
+					width: (8/16rem);
+					height: (8/16rem);
+					border-radius: 50%;
+					background: var(--primary);
+					opacity: 0;
+					pointer-events: none;
+					position: absolute;
+					display: block;
+					top: 50%;
+					left: (-20/16rem);
+					transform: translateY(-50%);
+					transition:
+						opacity 0.3s,
+						left 0.3s;
+				}
+
+				&:hover {
+					color: var(--primary);
+					cursor: pointer;
+					&:before {
+						left: 0;
+						opacity: 1;
+					}
+				}
+
+				&.cs-active {
+					font-weight: 700;
+					color: var(--primary);
+					&:before {
+						left: 0;
+						opacity: 1;
+					}
+				}
+			}
+
+			.cs-wrapper {
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+				z-index: 1;
+			}
+
+			.cs-gallery {
+				width: 100%;
+				padding: 0;
+				margin: 0;
+				margin-bottom: clamp(3rem, 3vw, 4rem);
+				opacity: 1;
+				visibility: visible;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				left: 0;
+				gap: clamp(1rem, 1vw, 1.25rem);
+				transition:
+					transform 0.7s,
+					opacity 0.3s,
+					visibility 0.5s,
+					top 0.3s,
+					left 0.3s;
+				transform-origin: left top;
+
+				&.cs-hidden {
+					position: absolute;
+					visibility: hidden;
+					pointer-events: none;
+					opacity: 0;
+					bottom: 0;
+					left: 0;
+					transform: scaleY(0) scaleX(0);
+
+					.cs-image {
+						transform: translateY(2.1875rem);
+						opacity: 0;
+					}
+				}
+			}
+
+			.cs-image {
+				border-radius: (4/16rem);
+				width: clamp(47%, 42.5vw, 48.5%);
+				aspect-ratio: 154/211;
+				overflow: hidden;
+				display: block;
+				position: relative;
+				transform: translateY(0rem);
+				opacity: 1;
+				transition:
+					opacity 0.6s,
+					transform 0.6s;
+
+				&:nth-of-type(1) { transition-delay: 0.10s; }
+				&:nth-of-type(2) { transition-delay: 0.20s; }
+				&:nth-of-type(3) { transition-delay: 0.30s; }
+				&:nth-of-type(4) { transition-delay: 0.40s; }
+				&:nth-of-type(5) { transition-delay: 0.50s; }
+				&:nth-of-type(6) { transition-delay: 0.60s; }
+				&:nth-of-type(7) { transition-delay: 0.70s; }
+				&:nth-of-type(8) { transition-delay: 0.80s; }
+
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+
+	@media only screen and (min-width: 48rem) {
+		#gallery-453 {
+			.cs-container {
+				max-width: (1280/16rem);
+			}
+
+			.cs-content {
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: flex-end;
+				gap: (24/16rem);
+			}
+
+			.cs-flex {
+				width: 50%;
+			}
+
+			.cs-title {
+				margin: 0;
+			}
+
+			.cs-button-group {
+				width: auto;
+			}
+
+			.cs-gallery {
+				justify-content: flex-start;
+			}
+
+			.cs-image {
+				width: ~"clamp(10.6875rem, 23.3%, 19.0625rem)";
+				aspect-ratio: 304/425;
+			}
+		}
+	}
+
+	@media only screen and (min-width: 0rem) {
+		body.dark-mode {
+			#gallery-453 {
+				.cs-topper {
+					color: var(--primaryLight);
+				}
+				.cs-title,
+				.cs-text,
+				.cs-button {
+					color: var(--bodyTextColorWhite);
+
+					&.cs-active {
+						color: var(--primaryLight);
+					}
+				}
+			}
+		}
+	}
+</style>

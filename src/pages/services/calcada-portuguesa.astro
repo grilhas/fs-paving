@@ -1,0 +1,187 @@
+---
+// CALÇADA PORTUGUESA — /services/calcada-portuguesa/
+import { getImage } from "astro:assets";
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import {
+	buildServiceSchema,
+	buildFaqSchema,
+	buildBreadcrumbSchema,
+} from "@js/serviceSchema.js";
+
+import bannerImage from "@assets/images/pavimentos/calcada-onda.jpg";
+import introImage from "@assets/images/pavimentos/calcada-cubos-detalhe.jpg";
+import whyImageOne from "@assets/images/pavimentos/calcada-bicolor.jpg";
+import whyImageTwo from "@assets/images/pavimentos/calcada-onda-passeio.jpg";
+import processBefore from "@assets/images/pavimentos/preparacao-de-base.jpg";
+import processAfter from "@assets/images/pavimentos/calcada-onda.jpg";
+
+const optimizedBanner = await getImage({ src: bannerImage, format: "webp" });
+
+const service = {
+	meta: {
+		title: "Calçada Portuguesa no Algarve | Cubo Assentado à Mão",
+		seoDescription:
+			"Assentamento de calçada portuguesa em cubo de calcário e basalto em Albufeira, Vilamoura, Loulé, Faro, Lagos e Portimão. Base compactada e junta cheia. Orçamentos gratuitos.",
+	},
+	banner: {
+		title: "Calçada Portuguesa",
+		description:
+			"Cubos assentados à mão, com o padrão desenhado à medida do espaço.",
+		image: optimizedBanner,
+	},
+	intro: {
+		titleHighlight: "Calçada Portuguesa",
+		titleSuffix: " no Algarve",
+		intro: [
+			"A calçada portuguesa é o pavimento que melhor envelhece no exterior. Não estala como o cimento, não descola como a cerâmica, e quando uma zona cede levanta-se só essa parte e volta a assentar-se a mesma pedra.",
+			"Assentamos calçada em cubo de calcário e basalto, do pavimento corrido ao padrão desenhado, em caminhos, passeios, pátios, entradas e envolventes de piscina.",
+		],
+		emphasis:
+			"A pedra é a parte que dura. O que decide se o pavimento chega lá é a base por baixo dela.",
+		listIntro: "O que inclui um trabalho de calçada connosco:",
+		listItems: [
+			{
+				label: "Medição e escolha da pedra",
+				description:
+					"Medimos a área e propomos o tipo de cubo e a calibração adequada ao uso previsto, que não é o mesmo num caminho de jardim e numa entrada de garagem.",
+			},
+			{
+				label: "Escavação e base",
+				description:
+					"Escavação à cota certa e base em tout-venant espalhada e compactada por camadas, com as pendentes definidas para a água escoar.",
+			},
+			{
+				label: "Assentamento à mão",
+				description:
+					"Cubo a cubo, com o padrão marcado à partida, a fiada alinhada e a altura conferida à medida que se avança.",
+			},
+			{
+				label: "Lancis a rematar",
+				description:
+					"Lancil, guia ou cordão a fechar os lados, porque é o remate que impede a calçada de abrir pelas bordaduras.",
+			},
+			{
+				label: "Junta e compactação",
+				description:
+					"Areia espalhada e vibrada até a junta ficar cheia, com o pavimento compactado no fim e o local limpo.",
+			},
+		],
+		image: introImage,
+		imageAlt: "Detalhe de calçada em cubo de calcário com a junta cheia de areia",
+	},
+	whyChoose: {
+		title: "Porque Escolher a FS Paving",
+		introPara:
+			"Calçada mal assentada não se nota no dia da entrega: nota-se ao terceiro inverno, quando a zona por onde passa o carro afunda e os cubos em volta começam a mexer. A diferença está toda no que ficou por baixo.",
+		reasons: [
+			{
+				heading: "Base Compactada por Camadas",
+				description:
+					"A base não se despeja de uma vez, compacta-se por camadas. É mais demorado e é o que evita o assentamento diferencial.",
+			},
+			{
+				heading: "Pendentes Calculadas",
+				description:
+					"Definimos as pendentes antes de assentar pedra, para a água ir para a rua ou para a linha de drenagem, e não para a porta de casa.",
+			},
+			{
+				heading: "Padrão Marcado à Partida",
+				description:
+					"O desenho é marcado antes de começar, para as fiadas não fecharem tortas nem sobrar meio cubo no remate.",
+			},
+			{
+				heading: "Junta Cheia, Não Superficial",
+				description:
+					"Uma junta cheia trava os cubos uns contra os outros. É a junta vazia que começa a soltar pedra.",
+			},
+		],
+		imageOne: whyImageOne,
+		imageOneAlt: "Calçada bicolor com motivo geométrico em basalto sobre cubo claro",
+		imageTwo: whyImageTwo,
+		imageTwoAlt: "Passeio em calçada portuguesa com faixas em padrão de onda",
+	},
+	process: {
+		title: "Caminho e Pátio em Calçada numa Moradia em Albufeira",
+		paragraph:
+			"O cliente queria substituir um pavimento em cimento fissurado por calçada, com um padrão simples no pátio e o caminho de acesso a rematar no portão.",
+		headingThree: "Como fizemos",
+		bullets: [
+			{
+				label: "Visita e orçamento gratuito",
+				description:
+					"Medimos a área, vimos o estado do terreno e entregámos orçamento por escrito, com a pedra e o padrão definidos.",
+			},
+			{
+				label: "Remoção e escavação",
+				description:
+					"Removemos o pavimento em cimento, escavámos à cota necessária e retirámos o material do local.",
+			},
+			{
+				label: "Base e pendentes",
+				description:
+					"Base em tout-venant compactada por camadas, com a pendente do pátio a levar a água para a zona de drenagem.",
+			},
+			{
+				label: "Assentamento e junta",
+				description:
+					"Assentámos o cubo à mão, com o padrão marcado, rematámos com lancil junto ao relvado e enchemos a junta com areia vibrada.",
+			},
+		],
+		imageOne: processBefore,
+		imageOneAlt: "Base em preparação e compactação antes de assentar a pedra",
+		imageTwo: processAfter,
+		imageTwoAlt: "Calçada assentada, com o padrão concluído e a junta cheia",
+	},
+	faq: {
+		title: "Perguntas Frequentes sobre Calçada Portuguesa",
+		questions: [
+			{
+				question: "Calçada portuguesa aguenta a passagem de carros?",
+				answer:
+					"Aguenta, desde que a base esteja dimensionada para isso e a calibração do cubo seja a adequada. Em zonas de passagem diária de viaturas, muitas vezes recomendamos pavê, que trava melhor sob carga e é mais simples de reparar ponto por ponto.",
+			},
+			{
+				question: "Quanto tempo demora assentar calçada?",
+				answer:
+					"Depende muito mais do terreno do que da área. Se a base já existe e está nivelada, avança-se depressa. Se for preciso escavar e compactar, a preparação pode levar mais tempo do que o assentamento da pedra.",
+			},
+			{
+				question: "Podem fazer um padrão desenhado?",
+				answer:
+					"Sim. Fazemos padrão corrido, faixas, motivos geométricos e desenhos à medida em cubo claro e basalto. O desenho é marcado no local antes de assentar.",
+			},
+			{
+				question: "A calçada fica escorregadia com chuva?",
+				answer:
+					"O cubo de calcário tem superfície rugosa e drena bem pela junta. Em zonas permanentemente molhadas, como contornos de piscina, escolhemos acabamentos com mais aderência.",
+			},
+			{
+				question: "É preciso manutenção?",
+				answer:
+					"Pouca. O essencial é repor a areia da junta de vez em quando, sobretudo em zonas de vento ou onde se lava o pavimento com pressão, porque é a junta que mantém os cubos travados.",
+			},
+		],
+	},
+};
+
+const serviceSchema = buildServiceSchema({
+	name: "Calçada Portuguesa",
+	description: service.meta.seoDescription,
+	slug: "calcada-portuguesa",
+	serviceType: "Assentamento de calçada portuguesa",
+});
+const faqSchema = buildFaqSchema(service.faq.questions);
+const breadcrumbSchema = buildBreadcrumbSchema([
+	{ name: "Início", url: "/" },
+	{ name: "Serviços", url: "/services/" },
+	{ name: "Calçada Portuguesa", url: "/services/calcada-portuguesa/" },
+]);
+---
+
+<ServiceLayout {...service}>
+	<Fragment slot="schema">
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	</Fragment>
+</ServiceLayout>

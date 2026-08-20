@@ -1,0 +1,372 @@
+/*-- -------------------------- -->
+<---         CSS Reset          -->
+<--- -------------------------- -*/
+
+/* Modern CSS Reset - Based on Josh Comeau's reset */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+	margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+body {
+	/* 4. Add accessible line-height */
+	line-height: 1.5;
+	/* 5. Improve text rendering */
+	-webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+	text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/*-- -------------------------- -->
+<---       CSS Variables        -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0em) {
+	:root {
+		// Website colors — FS Paving. Amostradas da imagem de perfil: monograma "FS"
+		// (F em grafite, S em dourado) e um caminho de calçada em creme, tudo sobre
+		// preto. Os tons crus do logótipo não passam contraste como cor de texto ou de
+		// botão (o dourado #A56D20 dá 4.37:1 sobre branco, o dourado claro #D7A046 dá
+		// 2.33:1), por isso cada token é o tom do logótipo mantido na luminosidade que
+		// cumpre WCAG AA (4.5:1) contra branco E contra --bgLight ao mesmo tempo. As
+		// variantes claras são o espelho disso para as superfícies quase-negras.
+		--primary: #8B6623;          // dourado do logótipo escurecido — 5.2:1 sobre branco
+		--primaryLight: #D7A046;     // o dourado vivo do "S", tal como está no logótipo
+		--secondary: #57514A;        // grafite quente do "F"
+		--secondaryLight: #B6B0AA;   // prata do "F" — acentos em modo escuro
+		--headerColor: #121110;      // o preto do logótipo
+		--bodyTextColor: #4A4642;    // cinza quente para corpo de texto
+		--bodyTextColorWhite: #FBF8F3;
+		--bgLight: #F7F1E8;          // creme da calçada, aclarado para fundo de página
+
+		/* 13px - 16px */
+		--topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+		/* 31px - 49px */
+		--headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+		--bodyFontSize: 1rem;
+
+		/* 60px - 100px top and bottom */
+		--sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+
+		--headerFont: "Sora", Arial, sans-serif;
+		--bodyFont: "DM Sans", Arial, sans-serif; 
+	}
+}
+
+/*-- -------------------------- -->
+<---       Font Faces           -->
+<--- -------------------------- -*/
+
+// Grab your fonts to locally host from https://google-webfonts-helper.herokuapp.com/fonts
+
+/* sora-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/sora-v17-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* sora-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/sora-v17-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* dm-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/dm-sans-v17-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* dm-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/dm-sans-v17-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/*-- -------------------------- -->
+<---     Base Element Styles    -->
+<--- -------------------------- -*/
+
+body,
+html {
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 100%;
+	color: var(--bodyTextColor);
+}
+
+body {
+	transition: background-color 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--headerColor);
+	font-family: var(--headerFont);
+}
+
+p,
+li,
+a {
+	font-size: (16/16rem);
+	line-height: 1.5em;
+}
+
+p,
+li,
+.cs-item-p,
+.cs-item-text {
+	color: var(--bodyTextColor);
+	font-family: var(--bodyFont);
+}
+
+.cs-tag {
+	font-family: var(--headerFont);
+	text-transform: uppercase;
+}
+
+a,
+button {
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+/*-- -------------------------- -->
+<---   Typography Helpers       -->
+<--- -------------------------- -*/
+
+// Text styles - can be replaced using CodeStitch's "Content Flair" Stitches
+.cs-topper {
+	font-size: var(--topperFontSize);
+	font-weight: 700;
+	line-height: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--secondary);
+	font-family: var(--headerFont);
+	display: block;
+}
+
+.cs-title {
+	font-size: var(--headerFontSize);
+	font-weight: 900;
+	line-height: 1.2em;
+	margin: 0 0 (16/16rem);
+	color: var(--headerColor);
+	font-family: var(--bodyFont);
+	position: relative;
+	text-transform: uppercase;
+}
+
+.cs-text {
+	font-size: var(--bodyFontSize);
+	line-height: 1.5em;
+	width: 100%;
+	margin: 0 auto;
+	color: var(--bodyTextColor);
+}
+
+.cs-h3 {
+	font-family: var(--headerFont);
+	text-transform: uppercase;
+}
+
+/*-- -------------------------- -->
+<---    Component Classes       -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0em) {
+	// Button - can be replaced using CodeStitch's "Button" Stitches
+	.cs-button-solid {
+		font-size: (16/16rem);
+		font-weight: bold;
+		line-height: (50/16rem);
+		text-align: center;
+		text-transform: uppercase;
+		text-decoration: none;
+		width: auto;
+		height: (50/16rem);
+		letter-spacing: 0.75px;
+		padding: 0 (30/16rem);
+		font-family: var(--headerFont);
+
+		// Transition Properties
+		color: #fff;
+		background-color: var(--primary);
+		display: inline-block;
+		position: relative;
+		z-index: 1;
+		transition: color 0.3s;
+		transition-delay: 0.1s;
+
+		&:hover {
+			// White, not var(--secondary): the :before wipe puts black behind this label,
+			// and --secondary is tuned for light backgrounds. White gives 21:1 here.
+			color: #fff;
+			&:before {
+				width: 100%;
+			}
+		}
+
+		&:before {
+			content: "";
+
+			//Transition properties
+			width: 0;
+			height: 100%;
+			background-color: #000;
+			opacity: 1;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			transition: width 0.3s;
+		}
+	}
+
+	.container {
+		width: 92%;
+		margin: auto;
+		position: relative;
+	}
+
+	// Skip to main content link - accessible to keyboard users and screen readers
+	.skip {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translateY(-100%);
+		z-index: 10001; // Above header (10000)
+		opacity: 0;
+		overflow: hidden;
+		transition: transform 0.3s, opacity 0.3s;
+
+		&:focus {
+			transform: translateY(0);
+			opacity: 1;
+			padding: 1rem 1.5rem;
+			background-color: var(--primary);
+			color: #fff;
+			text-decoration: none;
+			font-weight: 700;
+			outline: 2px solid var(--primary);
+			outline-offset: 2px;
+		}
+	}
+}
+
+/*-- -------------------------- -->
+<---      Utility Classes       -->
+<--- -------------------------- -*/
+
+// prevents icons from shrinking in flex containers
+[data-icon] {
+	flex-shrink: 0;
+}
+
+.cs-hide-on-mobile {
+	display: none;
+}
+
+.cs-hide-on-desktop {
+	display: block;
+}
+
+/*-- -------------------------- -->
+<---   Responsive Adjustments   -->
+<--- -------------------------- -*/
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	.cs-hide-on-mobile {
+		display: block;
+	}
+
+	.cs-hide-on-desktop {
+		display: none;
+	}
+}
+
+/* Scale full website with the viewport width */
+@media only screen and (min-width: 2000px) {
+	body,
+	html {
+		font-size: 0.85vw;
+	}
+}

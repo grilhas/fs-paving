@@ -1,0 +1,187 @@
+---
+// PAVÊ E PAVIMENTO EM BLOCOS — /services/pave-e-pavimento-em-blocos/
+import { getImage } from "astro:assets";
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import {
+	buildServiceSchema,
+	buildFaqSchema,
+	buildBreadcrumbSchema,
+} from "@js/serviceSchema.js";
+
+import bannerImage from "@assets/images/pavimentos/pave-blocos.jpg";
+import introImage from "@assets/images/pavimentos/lancil-e-pave.jpg";
+import whyImageOne from "@assets/images/pavimentos/pave-blocos.jpg";
+import whyImageTwo from "@assets/images/pavimentos/movimentacao-de-terras.jpg";
+import processBefore from "@assets/images/pavimentos/movimentacao-de-terras.jpg";
+import processAfter from "@assets/images/pavimentos/lancil-e-pave.jpg";
+
+const optimizedBanner = await getImage({ src: bannerImage, format: "webp" });
+
+const service = {
+	meta: {
+		title: "Pavê e Pavimento em Blocos no Algarve | Acessos e Estacionamentos",
+		seoDescription:
+			"Aplicação de pavê e pavimento em blocos de betão em acessos, entradas de garagem e estacionamentos, em todo o Algarve. Fiada travada e base compactada. Orçamentos gratuitos.",
+	},
+	banner: {
+		title: "Pavê e Pavimento em Blocos",
+		description:
+			"Blocos travados, para acessos que levam carro todos os dias.",
+		image: optimizedBanner,
+	},
+	intro: {
+		titleHighlight: "Pavê e Pavimento em Blocos",
+		titleSuffix: " no Algarve",
+		intro: [
+			"Onde passam viaturas todos os dias, o pavê é normalmente a melhor escolha. Os blocos travam-se uns nos outros e distribuem a carga, em vez de a concentrarem num ponto, e quando é preciso mexer levanta-se e repõe-se sem cortar nada.",
+			"Aplicamos pavê e pavimento em blocos de betão em entradas de garagem, caminhos de acesso, zonas de estacionamento e áreas de circulação em condomínios e espaços comerciais.",
+		],
+		emphasis:
+			"Um pavimento em blocos que assenta é quase sempre um problema de base, não de bloco.",
+		listIntro: "O que inclui uma aplicação connosco:",
+		listItems: [
+			{
+				label: "Avaliação da carga prevista",
+				description:
+					"Uma entrada de garagem de uso residencial e uma zona de manobra de viaturas pesadas não levam a mesma espessura de base.",
+			},
+			{
+				label: "Escavação e base",
+				description:
+					"Escavação à cota, tout-venant compactado por camadas e camada de assentamento em areia à espessura certa.",
+			},
+			{
+				label: "Fiada travada ou espinha",
+				description:
+					"Assentamento em fiada travada ou em espinha, que é o que dá o travamento entre blocos e evita o deslizamento.",
+			},
+			{
+				label: "Contenção lateral",
+				description:
+					"Lancil ou guia a conter os lados, sem o que os blocos abrem e a fiada perde travamento com o uso.",
+			},
+			{
+				label: "Junta e vibração",
+				description:
+					"Areia fina espalhada e o pavimento vibrado, para os blocos assentarem travados e ao nível.",
+			},
+		],
+		image: introImage,
+		imageAlt: "Calçada, lancil e pavê lado a lado, com o remate entre pavimentos",
+	},
+	whyChoose: {
+		title: "Porque Escolher a FS Paving",
+		introPara:
+			"O pavê tem a vantagem de ser reversível: levanta-se, resolve-se o que está por baixo e volta a assentar-se o mesmo material. Isso só é verdade se a base e a contenção lateral estiverem bem feitas.",
+		reasons: [
+			{
+				heading: "Base à Medida da Carga",
+				description:
+					"Dimensionamos a espessura da base ao peso que o pavimento vai receber, em vez de aplicar sempre a mesma receita.",
+			},
+			{
+				heading: "Travamento Real",
+				description:
+					"Fiada travada ou espinha, nunca junta alinhada nas duas direções, que é o que faz o pavimento deslizar sob travagem.",
+			},
+			{
+				heading: "Contenção nos Lados",
+				description:
+					"Sem lancil ou guia a conter, o pavê abre pelas bordaduras. A contenção não é um extra, faz parte do trabalho.",
+			},
+			{
+				heading: "Reparável Ponto por Ponto",
+				description:
+					"Se um dia for preciso abrir para uma conduta, levanta-se a zona e repõe-se o mesmo bloco, sem remendo à vista.",
+			},
+		],
+		imageOne: whyImageOne,
+		imageOneAlt: "Pavê em blocos de betão assentados em fiada travada",
+		imageTwo: whyImageTwo,
+		imageTwoAlt: "Movimentação de terras e preparação da base do pavimento",
+	},
+	process: {
+		title: "Acesso e Estacionamento numa Moradia em Loulé",
+		paragraph:
+			"O acesso era em terra batida e ficava intransitável com chuva. O cliente queria uma solução que aguentasse a passagem diária de dois carros e uma zona de estacionamento à entrada.",
+		headingThree: "Como fizemos",
+		bullets: [
+			{
+				label: "Visita e orçamento gratuito",
+				description:
+					"Medimos o comprimento do acesso, vimos as cotas e o ponto de escoamento, e entregámos orçamento por escrito.",
+			},
+			{
+				label: "Movimentação de terras",
+				description:
+					"Escavação e regularização do caminho, com o material excedente retirado do local.",
+			},
+			{
+				label: "Base compactada",
+				description:
+					"Tout-venant espalhado e compactado por camadas, com pendente transversal para a água correr para a vala lateral.",
+			},
+			{
+				label: "Pavê e contenção",
+				description:
+					"Blocos assentados em fiada travada, lancil a conter os dois lados, junta em areia e pavimento vibrado.",
+			},
+		],
+		imageOne: processBefore,
+		imageOneAlt: "Acesso em terra a ser preparado com máquina antes do pavimento",
+		imageTwo: processAfter,
+		imageTwoAlt: "Pavê aplicado com lancil a conter os lados do acesso",
+	},
+	faq: {
+		title: "Perguntas Frequentes sobre Pavê e Pavimento em Blocos",
+		questions: [
+			{
+				question: "Pavê ou calçada portuguesa: qual escolher?",
+				answer:
+					"Onde passam carros todos os dias, o pavê trava melhor sob carga e é mais simples de reparar. Onde o valor está no aspeto e na tradição, como pátios, caminhos de jardim e frentes de moradia, a calçada portuguesa ganha. Muitas vezes usamos os dois no mesmo terreno, cada um na zona certa.",
+			},
+			{
+				question: "O pavê afunda com o tempo?",
+				answer:
+					"Não deve. Quando afunda, quase sempre a base era insuficiente para a carga ou não foi compactada por camadas. É por isso que gastamos tempo na parte que não se vê.",
+			},
+			{
+				question: "Dá para aplicar sobre um pavimento existente?",
+				answer:
+					"Depende do que está por baixo. Sobre betão estável e com cotas compatíveis pode ser possível; sobre um pavimento já fissurado e a assentar, não vale a pena, porque o problema volta.",
+			},
+			{
+				question: "Que cores e formatos existem?",
+				answer:
+					"Há vários formatos e tons de bloco. Escolhemos consigo em função do que a casa já tem e da zona onde vai ser aplicado.",
+			},
+			{
+				question: "Quanto tempo aguenta?",
+				answer:
+					"Com base bem feita e contenção lateral, décadas. E se um dia for preciso intervir no subsolo, levanta-se e repõe-se o mesmo material.",
+			},
+		],
+	},
+};
+
+const serviceSchema = buildServiceSchema({
+	name: "Pavê e Pavimento em Blocos",
+	description: service.meta.seoDescription,
+	slug: "pave-e-pavimento-em-blocos",
+	serviceType: "Aplicação de pavê e pavimento em blocos",
+});
+const faqSchema = buildFaqSchema(service.faq.questions);
+const breadcrumbSchema = buildBreadcrumbSchema([
+	{ name: "Início", url: "/" },
+	{ name: "Serviços", url: "/services/" },
+	{ name: "Pavê e Pavimento em Blocos", url: "/services/pave-e-pavimento-em-blocos/" },
+]);
+---
+
+<ServiceLayout {...service}>
+	<Fragment slot="schema">
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	</Fragment>
+</ServiceLayout>

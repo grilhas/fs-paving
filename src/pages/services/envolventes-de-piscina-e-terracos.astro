@@ -1,0 +1,187 @@
+---
+// ENVOLVENTES DE PISCINA E TERRAÇOS — /services/envolventes-de-piscina-e-terracos/
+import { getImage } from "astro:assets";
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import {
+	buildServiceSchema,
+	buildFaqSchema,
+	buildBreadcrumbSchema,
+} from "@js/serviceSchema.js";
+
+import bannerImage from "@assets/images/pavimentos/calcada-bicolor.jpg";
+import introImage from "@assets/images/pavimentos/jardim-envolvente.jpg";
+import whyImageOne from "@assets/images/pavimentos/calcada-cubos-detalhe.jpg";
+import whyImageTwo from "@assets/images/pavimentos/moradia-ao-anoitecer.jpg";
+import processBefore from "@assets/images/pavimentos/preparacao-de-base.jpg";
+import processAfter from "@assets/images/pavimentos/calcada-bicolor.jpg";
+
+const optimizedBanner = await getImage({ src: bannerImage, format: "webp" });
+
+const service = {
+	meta: {
+		title: "Envolventes de Piscina e Terraços no Algarve | Pedra Antiderrapante",
+		seoDescription:
+			"Pavimentos em volta de piscinas, terraços e zonas de lazer no Algarve, com pedra que não queima ao sol e acabamento antiderrapante. Orçamentos gratuitos.",
+	},
+	banner: {
+		title: "Envolventes de Piscina e Terraços",
+		description:
+			"Pedra que não queima ao sol nem escorrega quando está molhada.",
+		image: optimizedBanner,
+	},
+	intro: {
+		titleHighlight: "Envolventes de Piscina e Terraços",
+		titleSuffix: " no Algarve",
+		intro: [
+			"Em volta de uma piscina, o pavimento tem duas exigências que não existem em mais nenhum sítio: é pisado descalço com o sol a bater, e está molhado durante boa parte do dia.",
+			"Fazemos envolventes de piscina, terraços e zonas de lazer em calçada e pedra clara, com escolha de material e acabamento pensada para essas duas condições, e com o escoamento a afastar a água do plano de água.",
+		],
+		emphasis:
+			"Pedra escura em volta de uma piscina no Algarve fica quente ao ponto de não se pisar. A cor não é só estética.",
+		listIntro: "O que temos em conta neste trabalho:",
+		listItems: [
+			{
+				label: "Cor e temperatura",
+				description:
+					"Pedra clara, que reflete em vez de acumular calor, para a superfície continuar pisável descalço no verão.",
+			},
+			{
+				label: "Aderência com água",
+				description:
+					"Acabamento com textura nas zonas que estão sempre molhadas, para reduzir o risco de escorregar.",
+			},
+			{
+				label: "Escoamento para fora",
+				description:
+					"Pendentes a afastar a água do plano de água e das zonas de estar, e não a conduzi-la para lá.",
+			},
+			{
+				label: "Remate na borda",
+				description:
+					"Remate cuidado contra a borda da piscina e as peças de coroamento, com junta ajustada.",
+			},
+			{
+				label: "Degraus e transições",
+				description:
+					"Degraus, muretes e transições para o relvado ou terraço, rematados com lancil ou peça de acabamento.",
+			},
+		],
+		image: introImage,
+		imageAlt: "Zona exterior ajardinada com pavimento em pedra clara",
+	},
+	whyChoose: {
+		title: "Porque Escolher a FS Paving",
+		introPara:
+			"A maior parte dos problemas que vemos em envolventes de piscina não é de assentamento: é de escolha de material. Pedra demasiado escura, acabamento demasiado polido, ou pendente a levar a água para o sítio errado.",
+		reasons: [
+			{
+				heading: "Material Escolhido para o Uso",
+				description:
+					"Propomos a pedra em função de ser pisada descalça e molhada, não apenas do aspeto no catálogo.",
+			},
+			{
+				heading: "Antiderrapante Onde Importa",
+				description:
+					"Textura nas zonas de contorno e nos degraus, que são os pontos onde as quedas acontecem.",
+			},
+			{
+				heading: "Água Afastada do Plano",
+				description:
+					"As pendentes levam a água para fora da zona de banho, o que também ajuda a manter a piscina limpa.",
+			},
+			{
+				heading: "Remate Junto à Borda",
+				description:
+					"É o detalhe mais visto de perto de todo o pavimento. É onde metemos mais tempo de acabamento.",
+			},
+		],
+		imageOne: whyImageOne,
+		imageOneAlt: "Detalhe de pedra clara assentada com junta cheia",
+		imageTwo: whyImageTwo,
+		imageTwoAlt: "Moradia com zona exterior e envolvente pavimentada ao anoitecer",
+	},
+	process: {
+		title: "Envolvente de Piscina numa Villa em Vilamoura",
+		paragraph:
+			"A casa é arrendada boa parte do ano e a obra tinha de ficar pronta entre duas reservas. O pavimento anterior era escuro e ficava impossível de pisar a partir do meio-dia.",
+		headingThree: "Como fizemos",
+		bullets: [
+			{
+				label: "Visita e orçamento gratuito",
+				description:
+					"Medimos o contorno, vimos as cotas em relação ao plano de água e propusemos pedra clara com acabamento rugoso.",
+			},
+			{
+				label: "Remoção e base",
+				description:
+					"Retirámos o pavimento anterior, corrigimos a base e definimos as pendentes a afastar a água da piscina.",
+			},
+			{
+				label: "Assentamento por fases",
+				description:
+					"Trabalhámos por fases, para o acesso à casa e à zona de estar nunca ficar cortado durante a obra.",
+			},
+			{
+				label: "Remate e entrega",
+				description:
+					"Rematámos contra o coroamento da piscina, enchemos a junta e entregámos dentro da janela combinada.",
+			},
+		],
+		imageOne: processBefore,
+		imageOneAlt: "Base em preparação em volta da zona de piscina",
+		imageTwo: processAfter,
+		imageTwoAlt: "Envolvente de piscina acabada, em pedra clara com padrão",
+	},
+	faq: {
+		title: "Perguntas Frequentes sobre Envolventes de Piscina e Terraços",
+		questions: [
+			{
+				question: "Que pedra recomendam em volta de uma piscina?",
+				answer:
+					"Calcário claro, com acabamento rugoso ou envelhecido. Reflete o calor em vez de o acumular e mantém aderência com água. Pedra escura, no Algarve, fica quente ao ponto de não se pisar descalço.",
+			},
+			{
+				question: "Dá para aplicar sobre o pavimento existente?",
+				answer:
+					"Às vezes, se estiver estável e as cotas permitirem sem criar degrau junto à borda. Muitas vezes é preferível remover, porque é a única forma de corrigir as pendentes.",
+			},
+			{
+				question: "O trabalho pode ser feito entre reservas?",
+				answer:
+					"Sim, e é um pedido comum em casas de arrendamento. Definimos a janela à partida e, se for preciso, trabalhamos por fases para o acesso não ficar cortado.",
+			},
+			{
+				question: "Como fica o remate com o coroamento da piscina?",
+				answer:
+					"Ajustamos a fiada final para fechar contra as peças de coroamento com junta regular, sem recortes estreitos à vista. É a zona onde metemos mais tempo de acabamento.",
+			},
+			{
+				question: "Também fazem terraços e zonas de estar?",
+				answer:
+					"Sim, e frequentemente no mesmo trabalho: contorno de piscina, terraço, caminhos de acesso e degraus, com o mesmo material a dar unidade ao exterior.",
+			},
+		],
+	},
+};
+
+const serviceSchema = buildServiceSchema({
+	name: "Envolventes de Piscina e Terraços",
+	description: service.meta.seoDescription,
+	slug: "envolventes-de-piscina-e-terracos",
+	serviceType: "Pavimentação de envolventes de piscina e terraços",
+});
+const faqSchema = buildFaqSchema(service.faq.questions);
+const breadcrumbSchema = buildBreadcrumbSchema([
+	{ name: "Início", url: "/" },
+	{ name: "Serviços", url: "/services/" },
+	{ name: "Envolventes de Piscina e Terraços", url: "/services/envolventes-de-piscina-e-terracos/" },
+]);
+---
+
+<ServiceLayout {...service}>
+	<Fragment slot="schema">
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	</Fragment>
+</ServiceLayout>

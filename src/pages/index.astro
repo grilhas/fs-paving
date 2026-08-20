@@ -1,0 +1,90 @@
+---
+// Utils
+import { getImage } from "astro:assets";
+
+// Components
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@components/Hero/Hero.astro";
+import Services from "@components/Services/Services.astro";
+import WhyChoose from "@components/WhyChoose/WhyChoose.astro";
+import Process from "@components/Process/OurProcess.astro";
+import CTASimple from "@components/CTA/CTASimple.astro";
+import Gallery from "@components/Gallery/Gallery.astro";
+import Reviews from "@components/Reviews/Reviews.astro";
+import FAQ from "@components/FAQ/FAQ.astro";
+
+// Data
+import { SITE, BUSINESS } from "@data/client";
+import { buildFaqSchema } from "@js/serviceSchema.js";
+
+// Hero photo
+import heroImage from "@assets/images/pavimentos/calcada-onda-escura.jpg";
+const optimizedHeroImage = await getImage({ src: heroImage, format: "webp" });
+
+const homeFaq = {
+	title: "Perguntas Frequentes",
+	questions: [
+		{
+			question: "Que zonas é que a FS Paving serve?",
+			answer:
+				"Trabalhamos em todo o Algarve e arredores: Albufeira, Vilamoura, Loulé, Faro, Lagos, Portimão e concelhos vizinhos. Se tiver dúvidas sobre a sua zona, pergunte, porque a deslocação costuma ser possível.",
+		},
+		{
+			question: "O orçamento é realmente gratuito?",
+			answer:
+				"Sim. Vamos ao local medir a área e ver o terreno, e o orçamento é gratuito e sem compromisso. Se enviar fotografias e as medidas aproximadas por mensagem, conseguimos muitas vezes dar já uma ideia de valor.",
+		},
+		{
+			question: "Que tipo de pavimentos assentam?",
+			answer:
+				"Calçada portuguesa em cubo de calcário e basalto, pavê e pavimento em blocos de betão, e lancis, guias e cordões. Aplicamos isso em caminhos, entradas de garagem, passeios, zonas de estacionamento, envolventes de piscina e terraços.",
+		},
+		{
+			question: "Porque é que a base é tão importante?",
+			answer:
+				"Porque é ela que aguenta o peso. A pedra em si dura décadas, mas se a base não for escavada e compactada em condições, o pavimento acaba por afundar nas zonas de mais carga, sobretudo nas entradas de garagem. É a parte que não se vê e é a que decide o resultado.",
+		},
+		{
+			question: "Quanto custa assentar calçada?",
+			answer:
+				"Depende da área, do tipo de pedra, do padrão pretendido e, sobretudo, do estado do terreno. Um pavimento sobre base já existente e nivelada não tem o mesmo custo que um acesso que exige movimentação de terras. O valor é sempre fechado por escrito antes de começar.",
+		},
+		{
+			question: "É possível reparar só uma zona, sem levantar o pavimento todo?",
+			answer:
+				"Na maioria dos casos sim. Zonas afundadas, cubos soltos e junta esvaziada resolvem-se levantando apenas a área afetada, corrigindo a base e reassentando os cubos existentes quando estão em condições.",
+		},
+		{
+			question: "Trabalham com condomínios e espaços públicos, ou só com moradias?",
+			answer:
+				"Trabalhamos com os dois. Além de moradias, fazemos pavimentos exteriores em condomínios, espaços comerciais e obras de espaço público.",
+		},
+		{
+			question: "Falam outras línguas além de português?",
+			answer:
+				"Sim, atendemos em português, espanhol e alemão, o que ajuda quando o proprietário do imóvel não vive em Portugal.",
+		},
+	],
+};
+
+const faqSchema = buildFaqSchema(homeFaq.questions);
+---
+
+<BaseLayout
+	title="Calçada Portuguesa, Pavê e Lancis no Algarve"
+	description={SITE.description}
+	heroImage={optimizedHeroImage}
+>
+	<Fragment slot="schema">
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+	</Fragment>
+
+	<Hero image={optimizedHeroImage} />
+	<Services />
+	<WhyChoose />
+	<Process />
+	<CTASimple />
+	<Gallery />
+	<Reviews />
+	<FAQ {...homeFaq} />
+</BaseLayout>

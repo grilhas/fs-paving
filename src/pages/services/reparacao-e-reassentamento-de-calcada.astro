@@ -1,0 +1,187 @@
+---
+// REPARAÇÃO E REASSENTAMENTO DE CALÇADA — /services/reparacao-e-reassentamento-de-calcada/
+import { getImage } from "astro:assets";
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import {
+	buildServiceSchema,
+	buildFaqSchema,
+	buildBreadcrumbSchema,
+} from "@js/serviceSchema.js";
+
+import bannerImage from "@assets/images/pavimentos/calcada-cubos-detalhe.jpg";
+import introImage from "@assets/images/pavimentos/calcada-cubos.jpg";
+import whyImageOne from "@assets/images/pavimentos/preparacao-de-base.jpg";
+import whyImageTwo from "@assets/images/pavimentos/remocao-de-material.jpg";
+import processBefore from "@assets/images/pavimentos/remocao-de-material.jpg";
+import processAfter from "@assets/images/pavimentos/calcada-onda.jpg";
+
+const optimizedBanner = await getImage({ src: bannerImage, format: "webp" });
+
+const service = {
+	meta: {
+		title: "Reparação de Calçada no Algarve | Zonas Afundadas e Cubos Soltos",
+		seoDescription:
+			"Reparação e reassentamento de calçada no Algarve: zonas afundadas, cubos soltos, junta esvaziada e raízes a levantar a pedra. Sem levantar o pavimento todo. Orçamentos gratuitos.",
+	},
+	banner: {
+		title: "Reparação e Reassentamento de Calçada",
+		description:
+			"Zonas afundadas e cubos soltos, sem levantar o pavimento todo.",
+		image: optimizedBanner,
+	},
+	intro: {
+		titleHighlight: "Reparação e Reassentamento de Calçada",
+		titleSuffix: " no Algarve",
+		intro: [
+			"A grande vantagem da pedra é esta: quando falha, não se substitui, reassenta-se. Na maioria das reparações que fazemos, os cubos que levantamos são os mesmos que voltam a ser assentados no fim.",
+			"Reparamos zonas afundadas, cubos soltos, junta esvaziada, abatimentos junto a tampas e caixas de saneamento, e pavimento levantado por raízes de árvore.",
+		],
+		emphasis:
+			"Reparar calçada sem corrigir a base é garantir a mesma chamada dentro de dois anos.",
+		listIntro: "O que fazemos neste serviço:",
+		listItems: [
+			{
+				label: "Diagnóstico da causa",
+				description:
+					"Antes de levantar pedra, percebemos porque cedeu: base insuficiente, água a passar por baixo, carga a mais ou raiz a empurrar.",
+			},
+			{
+				label: "Levantamento só da zona afetada",
+				description:
+					"Abrimos apenas a área necessária e guardamos os cubos por ordem, para os reaproveitar no reassentamento.",
+			},
+			{
+				label: "Correção da base",
+				description:
+					"Recompactação da base e correção da cota e da pendente, que é a parte que evita a repetição do problema.",
+			},
+			{
+				label: "Reassentamento",
+				description:
+					"Cubos reassentados à mão, com a fiada a casar com o pavimento existente em volta e ao nível certo.",
+			},
+			{
+				label: "Reposição de junta",
+				description:
+					"Junta cheia com areia vibrada, na zona reparada e na envolvente, para travar o pavimento outra vez.",
+			},
+		],
+		image: introImage,
+		imageAlt: "Campo de calçada em cubo com zonas a necessitar de reassentamento",
+	},
+	whyChoose: {
+		title: "Porque Escolher a FS Paving",
+		introPara:
+			"Chamam-nos muitas vezes depois de uma reparação anterior que durou pouco. Quase sempre o que aconteceu foi o mesmo: repuseram os cubos sem mexer na base que tinha cedido.",
+		reasons: [
+			{
+				heading: "Tratamos a Causa",
+				description:
+					"Se a base cedeu, é a base que se corrige. Repor a pedra à cota certa sobre a mesma base falha outra vez.",
+			},
+			{
+				heading: "Cubos Reaproveitados",
+				description:
+					"Quando a pedra está em condições, é a mesma que volta ao lugar. O pavimento fica sem remendo de tom diferente.",
+			},
+			{
+				heading: "Fiada a Casar com o Existente",
+				description:
+					"O reassentamento acompanha o alinhamento e o padrão em volta, para a zona reparada não ficar a saltar à vista.",
+			},
+			{
+				heading: "Junta Reposta em Volta",
+				description:
+					"Repomos a junta também na envolvente, porque a zona vizinha de uma reparação está quase sempre já a esvaziar.",
+			},
+		],
+		imageOne: whyImageOne,
+		imageOneAlt: "Correção e compactação da base antes do reassentamento",
+		imageTwo: whyImageTwo,
+		imageTwoAlt: "Remoção do material da zona a reparar",
+	},
+	process: {
+		title: "Zona Afundada Junto a uma Caixa de Saneamento em Faro",
+		paragraph:
+			"O pavimento tinha assentado em volta da tampa de saneamento, criando uma depressão onde a água acumulava. Já tinha sido reparado antes, sem resultado.",
+		headingThree: "Como fizemos",
+		bullets: [
+			{
+				label: "Diagnóstico",
+				description:
+					"Percebemos que a base em volta da caixa nunca tinha sido compactada em condições, o que explicava a repetição do assentamento.",
+			},
+			{
+				label: "Levantamento por ordem",
+				description:
+					"Levantámos apenas a zona afetada, guardando os cubos por ordem para os repor no mesmo alinhamento.",
+			},
+			{
+				label: "Base corrigida",
+				description:
+					"Recompactámos a base em volta da caixa por camadas e ajustámos a cota para eliminar a depressão.",
+			},
+			{
+				label: "Reassentamento e junta",
+				description:
+					"Reassentámos os cubos existentes ao nível do pavimento em volta e repusemos a junta na zona e na envolvente.",
+			},
+		],
+		imageOne: processBefore,
+		imageOneAlt: "Zona de calçada levantada e material removido antes da reparação",
+		imageTwo: processAfter,
+		imageTwoAlt: "Calçada reassentada, ao nível do pavimento em volta",
+	},
+	faq: {
+		title: "Perguntas Frequentes sobre Reparação e Reassentamento de Calçada",
+		questions: [
+			{
+				question: "Dá para reparar só uma zona?",
+				answer:
+					"Sim, e é o mais comum. Abrimos apenas a área afetada, corrigimos a base e reassentamos os cubos. Não é preciso levantar o pavimento todo.",
+			},
+			{
+				question: "Os cubos antigos servem outra vez?",
+				answer:
+					"Na maioria dos casos sim, e é preferível: pedra da mesma origem e com o mesmo desgaste não deixa remendo de tom diferente. Só substituímos os cubos partidos.",
+			},
+			{
+				question: "Uma raiz de árvore levantou a calçada. Tem solução?",
+				answer:
+					"Tem, mas depende da árvore. Resolve-se a zona, trata-se o conflito com a raiz onde é possível fazê-lo sem comprometer a árvore, e reassenta-se. Se a raiz continuar a crescer no mesmo sentido, explicamos isso à partida.",
+			},
+			{
+				question: "Só preciso de repor a areia da junta. Fazem esse trabalho?",
+				answer:
+					"Fazemos. É um trabalho pequeno e muitas vezes é o que evita a reparação grande, porque é a junta vazia que começa a soltar a pedra.",
+			},
+			{
+				question: "Quanto tempo demora uma reparação?",
+				answer:
+					"Uma zona pequena resolve-se num dia. O que às vezes obriga a esperar é a base, quando é preciso dar tempo a que assente ou seque antes de reassentar a pedra.",
+			},
+		],
+	},
+};
+
+const serviceSchema = buildServiceSchema({
+	name: "Reparação e Reassentamento de Calçada",
+	description: service.meta.seoDescription,
+	slug: "reparacao-e-reassentamento-de-calcada",
+	serviceType: "Reparação e reassentamento de calçada",
+});
+const faqSchema = buildFaqSchema(service.faq.questions);
+const breadcrumbSchema = buildBreadcrumbSchema([
+	{ name: "Início", url: "/" },
+	{ name: "Serviços", url: "/services/" },
+	{ name: "Reparação e Reassentamento de Calçada", url: "/services/reparacao-e-reassentamento-de-calcada/" },
+]);
+---
+
+<ServiceLayout {...service}>
+	<Fragment slot="schema">
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	</Fragment>
+</ServiceLayout>

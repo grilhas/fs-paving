@@ -1,0 +1,29 @@
+[
+  { "key": "Início", "url": "/", "children": [] },
+  { "key": "Sobre Nós", "url": "/about/", "children": [] },
+  {
+    "key": "Serviços",
+    "url": "/services/",
+    "children": [
+      { "key": "Calçada Portuguesa", "url": "/services/calcada-portuguesa/" },
+      { "key": "Pavê e Blocos", "url": "/services/pave-e-pavimento-em-blocos/" },
+      { "key": "Lancis e Guias", "url": "/services/lancis-e-guias/" },
+      { "key": "Acessos e Estacionamentos", "url": "/services/acessos-entradas-e-estacionamentos/" },
+      { "key": "Piscinas e Terraços", "url": "/services/envolventes-de-piscina-e-terracos/" },
+      { "key": "Reparação de Calçada", "url": "/services/reparacao-e-reassentamento-de-calcada/" }
+    ]
+  },
+  {
+    "key": "Áreas de Serviço",
+    "url": "/albufeira/",
+    "children": [
+      { "key": "Albufeira", "url": "/albufeira/" },
+      { "key": "Vilamoura", "url": "/vilamoura/" },
+      { "key": "Loulé", "url": "/loule/" },
+      { "key": "Faro", "url": "/faro/" },
+      { "key": "Lagos", "url": "/lagos/" },
+      { "key": "Portimão", "url": "/portimao/" }
+    ]
+  },
+  { "key": "Contactos", "url": "/contact/", "children": [] }
+]
