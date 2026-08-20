@@ -14,20 +14,20 @@ import cities from "@data/cities.json";
 
 // Static banner image registry — Astro requires statically analyzable imports.
 // A chave é o campo "banner" de cada entrada em src/data/cities.json.
-import ruaAlbufeira from "@assets/images/pavimentos/rua-albufeira-moradia.jpg";
-import algarveVilas from "@assets/images/pavimentos/algarve-vilas-vista-aerea.jpg";
+import ruaMoradias from "@assets/images/pavimentos/rua-moradias-passeio.jpg";
+import moradiasCosta from "@assets/images/pavimentos/moradias-costa-algarve.jpg";
+import moradiasAcessos from "@assets/images/pavimentos/moradias-algarve-acessos.jpg";
+import caminhoMoradias from "@assets/images/pavimentos/caminho-entre-moradias.jpg";
 import algarveFalesia from "@assets/images/pavimentos/algarve-falesia-moradias.jpg";
-import calcadaCubos from "@assets/images/pavimentos/calcada-cubos.jpg";
 import calcadaOnda from "@assets/images/pavimentos/calcada-onda.jpg";
-import calcadaBicolor from "@assets/images/pavimentos/calcada-bicolor.jpg";
 
 const bannerImages: Record<string, ImageMetadata> = {
-	"rua-albufeira-moradia": ruaAlbufeira,
-	"algarve-vilas-vista-aerea": algarveVilas,
+	"rua-moradias-passeio": ruaMoradias,
+	"moradias-costa-algarve": moradiasCosta,
+	"moradias-algarve-acessos": moradiasAcessos,
+	"caminho-entre-moradias": caminhoMoradias,
 	"algarve-falesia-moradias": algarveFalesia,
-	"calcada-cubos": calcadaCubos,
 	"calcada-onda": calcadaOnda,
-	"calcada-bicolor": calcadaBicolor,
 };
 
 type Scenario = { title: string; description: string };
